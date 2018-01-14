@@ -1,0 +1,18 @@
+<div class="container">
+        <div class="row">
+                <h1><?= $meetup->getTitle() ?></h1>
+        </div>
+
+        <div class="row">
+                <h2>Description</h2><br>
+                <p><?= $meetup->getDescription() ?></p>
+        </div>
+        <div class="row">
+                <hZ>Horaire meetup:</hZ> <br>
+                <p>De : <?= $meetup->getDateBegin() ?> 
+                à : <?= $meetup->getDateEnd() ?></p>
+        </div>
+        <div class="row">
+                <a href="<?= $this->url('meetup') ?>">Vos meetup</a>
+        </div>
+</div>

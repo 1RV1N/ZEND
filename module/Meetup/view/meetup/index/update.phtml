@@ -1,0 +1,44 @@
+<h1>Modifiez un meetup</h1>
+
+<?php
+    $form = $this->form; /* @var $form \Zend\Form\Form */
+?>
+
+<?= $this->form()->openTag($form); ?>
+<div class="row">
+    <div class='col-sm-4'>
+        <?= $this->formRow($form->get('title')) ?>
+    </div>
+</div>
+<br>
+
+<div class="row">
+    <div class='col-sm-4'>
+        <?= $this->formRow($form->get('description')) ?>
+    </div>
+</div>
+<br>
+
+<div class="row">
+    <div class='col-sm-4'>
+        <?= $this->formRow($form->get('dateBegin')) ?>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class='col-sm-4'>
+        <?= $this->formRow($form->get('dateEnd')) ?>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+</div>
+
+<br>
+
+<?= $this->formInput($form->get('submit')) ?><br>

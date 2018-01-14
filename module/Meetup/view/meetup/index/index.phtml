@@ -1,0 +1,32 @@
+<h1>Meetup</h1>
+<ul>
+    <div class="container">
+        <table class="table table-bordered table-dark table-hover">
+            <thead>
+                <th class="text-center">Nom</th>
+                <th class="text-center">Description</th>
+                <th class="text-center">Commencement</th>
+                <th class="text-center">Fin</th>
+                <th class="text-center">Detail</th>
+                <th class="text-center">Modifier</th>
+                <th class="text-center">Suprimer</th>
+            </thead>
+            <tbody>
+                <?php foreach ($this->meetup as $meetup):  ?>
+                    <td class="text-center"><?= $meetup->getTitle() ?></td>
+                    <td class="text-center"><?= $meetup->getDescription() ?></td>
+                    <td class="text-center"><?= $meetup->getDateBegin() ?></td>
+                    <td class="text-center"><?= $meetup->getDateEnd() ?></td>
+
+                    <td class="text-center"><a href="meetup/meetup/<?= $meetup->getID(); ?>"><span class="glyphicon glyphicon-plus" aria-hidden="true"> </span></a></td>
+
+                    <td class="text-center"><a href="meetup/update/<?= $meetup->getID(); ?>"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
+
+                    <td class="text-center"><a href="meetup/delete/<?= $meetup->getID(); ?>"><span class="glyphicon glyphicon-share" aria-hidden="true"></span></a></td>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</ul>
+
+<a href="<?= $this->url('meetup/add'); ?>" class="btn btn-secondary">Nouveau Meetup</a>
